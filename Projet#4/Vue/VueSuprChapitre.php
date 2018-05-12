@@ -1,4 +1,4 @@
-<?php $this->titre = "ModifChapitre"; ?>
+<?php $this->titre = "Supprimerchapitre"; ?>
 
 <nav id="navAdmin">
          <div id="Nav1">      <a href="index.php?action=admin"  class="LienNav">Ajouter un chapitre</a></div>
@@ -9,12 +9,38 @@
       </nav>
 
 <div id="ConteneurAdmin">
-    <p> Veuillez selectionner un chapitre pour le modifier </p>
+   
+    <!-- ********************* --> 
+    
+      <div id="ZoneAjouterChap"> 
+    
+    
+         <form method="POST" action="index.php?action=chapitresupr" >
+             
+         <label for="pays">Veuillez selectionner un chapitre a SUPPRIMER</label><br />
+     
+         <select name="SelectSuprChap" id="selectionchapitre">
+
+         <?php foreach ($chapitre as $oneChapitre): ?>
+
+             <option value="   <?=$oneChapitre['id'] ?>   "     selected>     <?=  $oneChapitre['titre'] ?>  </option> 
+             <!-- Mettre un lien value id --> 
+
+         <?php endforeach; ?>
+             
+            <input type="submit" value="Supprimer le chapitre" class="bouton_commenter" />
+        </select>
+          </form>
+      </div>
+    
+    
+     <!-- -------------------- --> 
    <?php foreach ($chapitre as $oneChapitre): ?> 
     <article>
         <header>
+            
             <div id="TitreChap">
-                 <a href="<?= "index.php?action=chapitremodif&id=" . $oneChapitre['id'] ?>">  <!-- Lien avec info du chapitre --> 
+                 <a href="<?= "index.php?action=chapitresupr&id=" . $oneChapitre['id'] ?>">  <!-- Lien avec info du chapitre --> 
                  <h1 class="titreBillet"><?= $oneChapitre['titre'] ?></h1> <!-- Titre du bilet --> 
                  </a>
             </div> 
@@ -22,17 +48,14 @@
     </article>
     <hr>
 <?php endforeach; ?>
-
+<!-- -------------------- --> 
      <hr>
 
 
     
 </div>  <!-- Fin div conteneur admin --> 
 
-        
 
-             
-     
-      
-    
+
+
 

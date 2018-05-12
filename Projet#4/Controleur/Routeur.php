@@ -35,7 +35,7 @@ class Routeur {
                 }
                 // Si l'action commenter est effectuer 
                  if  ($_GET['action'] == 'commenter') {
-                     $auteur = $this->getParametre($_POST, 'auteur');
+                     $auteur = $this->getParametre($_POST, 'auteur'); // variable auteur = $_post du name auteur 
                      $contenu = $this->getParametre($_POST, 'contenu');
                      $idoneChapitre = $this->getParametre($_POST, 'id');
                      
@@ -46,33 +46,62 @@ class Routeur {
                     $this->ctrlChapitre->signaler();
                }
                  
-                      
                 // Si l'action admin est effectuer 
                 if ($_GET['action'] == 'admin') {  // Si l'action Admin est effectuer alors :
                       $this->ctrlAdmin->ConnexionAdmin();  // Connexion Admin + Session 
                 }    
-
-                if ($_GET['action'] == 'Deconnexion') {  // On se deconecte avec l'action Deconnexion 
+                // On se deconecte avec l'action Deconnexion 
+                if ($_GET['action'] == 'Deconnexion') {  
                     $this->ctrlAdmin->DeconnexionAdmin(); 
                 }
-
-                if ($_GET['action'] == 'AjouterChapitre') {  // Ajouter un chapitre a la base 
+                // Ajouter un chapitre a la base 
+                if ($_GET['action'] == 'AjouterChapitre') {  
                 $this->ctrlAdmin->AdChapitre(); 
                 }
 
-                if ($_GET['action'] == 'ModifChapitre') {  // On affiche la vue admin
+                if ($_GET['action'] == 'ModifChapitre') {  // Affiche la vue admin 
                     $this->ctrlAdmin->ModificationChapitre(); 
                 }
-
-                if ($_GET['action'] == 'ModifierChapitre') {  // Modifier un chapitre dans la base 
-                    $this->ctrlAdmin->ModifierChapitre(); 
+               // Gére la selection du chapitre selon l'id
+                if ($_GET['action'] == 'chapitremodif') {   
+                    $idoneChapitre = intval($this->getParametre($_GET, 'id'));
+                    if ($idoneChapitre != 0) {
+                        $this->ctrlAdmin->ModifierChapitre($idoneChapitre);
+                    }
+                    else {
+                         throw new Exception("Identifiant de chapitre non valide"); 
+                    }
                 }
 
-                if ($_GET['action'] == 'VoirCom') {  // Si l'action VoirCom est effectuer alors :
-                    $this->ctrlAdmin->VoirCommentaire(); 
+                // Envoie du chapitre a la base   Modifier nom 
+                if ($_GET['action'] == 'XXX') {  
+                    $this->ctrlAdmin->ModifierChapitre3();        
                 }
+
+
+                // Affiche la selection de chapitre  
+                if ($_GET['action'] == 'SuprChapitre') {  
+                    $this->ctrlAdmin->SuprChapitre();        
+                }
+
+                // Suppression du chapitre a la base 
+                if ($_GET['action'] == 'chapitresupr') {     
+                    $this->ctrlAdmin->SuppressionChapitre();
+           
+                }
+
+// **************A faire *************************** */ 
+ 
+
+                if ($_GET['action'] == 'SupprimerCommentaire') {  // Si l'action SupprimerCommentaire est effectuer alors :  
+                    $this->ctrlAdmin->SupprimerCommentaire()  ;        
+                }  
+
+                
                
-
+                if ($_GET['action'] == 'VoirCom') {  // Si l'action VoirCom est effectuer alors :  Zone admin
+                    $this->ctrlAdmin->VoirCommentaire();        
+                }
             
 
 
@@ -86,13 +115,13 @@ class Routeur {
             }
 
         }
-        catch (Exception $e) {
+        catch (Exception $e) { // Sinon on affiche l'erreur 
             $this->erreur($e->getMessage());
         }
     }
 
     // Affiche une erreur
-    private function erreur($msgErreur) {
+    private function erreur($msgErreur) { // pour afficher la vueErreur 
         $vue = new Vue("Erreur");
         $vue->generer(array('msgErreur' => $msgErreur));
     }

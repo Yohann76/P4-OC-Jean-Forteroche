@@ -10,8 +10,8 @@ class chapitre extends Modele {
   // Utiliser SubSTR()
   public function getChapitre() {
   $sql = 'select CHA_ID as id, CHA_DATE as date,'
-  . ' CHA_TITRE as titre, CHA_CONTENU as contenu     ,   SUBSTR(CHA_CONTENU,4,5)                     from T_CHAPITRE'
-  . ' order by CHA_ID desc     ';
+  . ' CHA_TITRE as titre, CHA_CONTENU as contenu       from T_CHAPITRE'
+  . ' order by CHA_ID     '; // Si on retire le desk on change l'ordre  // by CHA_ID desc  
     $chapitre = $this->executerRequete($sql);
     return $chapitre;
   }

@@ -42,4 +42,10 @@ class Vue {
         }
     }
 
+
+      // Nettoie une valeur insérée dans une page HTML
+  private function nettoyer($valeur) {
+    return htmlspecialchars($valeur, ENT_QUOTES, 'UTF-8', false);
+  }
+
 }

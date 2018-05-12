@@ -10,6 +10,9 @@
         <!-- Javascript ( TinyMCE Cloud-->  
         <script src="https://cloud.tinymce.com/stable/tinymce.min.js? apiKey =lnfchylxlemst3ynxsyi9gn4s46t24w9izko03swk9ioqdhw"></script>
         <script>tinymce.init({ selector:'textarea' });</script>  
+        <!-- Script --> 
+        <script src="Contenu/js/jquery-3.2.1.js"> </script>       <!-- Bibliotheque JavaScript Jquery   --> 
+	    <script src="Contenu/js/Php.Ajax.js">         </script>       <!-- Script Ajax/php --> 
 
         <!-- Cascading Style Sheets -->
         <link rel="stylesheet" href="Contenu/css/style.css" /> 

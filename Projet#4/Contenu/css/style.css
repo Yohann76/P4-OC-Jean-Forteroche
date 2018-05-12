@@ -13,7 +13,10 @@ body {
     }
     /*   wysiwyg  */ 
 
- 
+ a {  /* lien de la page */ 
+    text-decoration:none;
+    color : black
+ }
 
     .bg-gray{
         /* background:red; */   
@@ -139,7 +142,7 @@ body {
    
 
 }
-div#Nav1 , div#Nav2 , div#Nav3 , div#Nav4  {
+div#Nav1 , div#Nav2 , div#Nav3 , div#Nav4 , div#Nav5 {
     width: 100%; /* 150px */ 
     height:  60px ;  /* 80px */
     
@@ -161,7 +164,7 @@ div#Nav1 , div#Nav2 , div#Nav3 , div#Nav4  {
    
 }
 
-div#Nav1:hover , div#Nav2:hover, div#Nav3:hover , div#Nav4:hover  {  /* survole des nav */ 
+div#Nav1:hover , div#Nav2:hover, div#Nav3:hover , div#Nav4:hover div#Nav5:hover {  /* survole des nav */ 
     background-color: #ffc013  ; 
 
 }
@@ -292,14 +295,7 @@ div#Nav1:hover , div#Nav2:hover, div#Nav3:hover , div#Nav4:hover  {  /* survole 
         
     }
 
-    #ContenuChap {
-        background-color: #ffc01377 ; 
-        text-align: center ; 
-        padding: 1px ;
-        
-        width: 80% ; 
-        margin: auto ; 
-    }
+ 
 
     hr {
         color : yellow  ; 
@@ -423,4 +419,70 @@ textarea {
     margin: auto ; 
    
    
+}
+
+
+#selectionchapitre {  /* Selection de chapitre en liste deroulante */ 
+margin-bottom: 10px ; 
+
+}
+
+#ModifTitre { /* modification de chapitre ( titre ) */
+    margin-bottom: 10px ; 
+    width: 30% ; 
+    text-align: center ; 
+    font-weight: bold ; 
+}
+
+
+#ModifChapitre { /* modification de chapitre ( titre ) */
+    margin-bottom: 10px ; 
+    width: 30% ; 
+    text-align: center ; 
+    font-weight: bold ; 
+
+} 
+
+.bouton_modifier {
+    margin-top: 15px ; 
+}
+#ContenuChap {
+ background-color: #ffc01377 ; 
+ text-align: center ; 
+ padding: 1px ;  
+ width: 80% ; 
+ margin: auto ; 
+}
+/* *****VoirCom ***** */ 
+#ComSignaler {
+    border : 2px black solid ; 
+    width: 60% ; 
+    height: auto ; 
+    text-align:  center ; 
+    margin : auto ; 
+    margin-top: 10px ;
+    background-color: #ffc013  ; 
+
+}
+
+#ContenerFlex {
+    display: flex ; 
+}
+#ContenerDivSignaler1 {
+    margin : auto ; 
+    border : 2px black solid ; 
+    padding-bottom: 10px ; 
+    margin-bottom: 10px ; 
+    width: 40% ; 
+
+    
+}
+#ContenerDivSignaler2 {  /* Commentaire non signaler */ 
+    margin : auto ; 
+    border : 2px black solid ; 
+    padding-bottom: 10px ; 
+    width:40% ; 
+  
+  
+    
 }

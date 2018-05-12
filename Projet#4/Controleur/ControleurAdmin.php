@@ -11,6 +11,9 @@ class ControleurAdmin {
     private $oneChapitre;
     private $commentaire;
     private $admin;
+    private $CommentaireSignaler ; 
+    private $CommentaireNonSignaler ; 
+
 
     public function __construct() {
         $this->chapitre = new chapitre();
@@ -36,8 +39,7 @@ public function ConnexionAdmin() {
      )
 
     { 
-        $chapitre = $this->chapitre->getChapitre(); // On ajoute les info du chapitre 
-        
+        $chapitre = $this->chapitre->getChapitre(); // On ajoute les info du chapitre pour la vue admin 
         $vue = new Vue("Admin");    // Generation de la vue Admin 
         $vue->generer(array('chapitre' => $chapitre, ));
     //    $vue->generer(array());
@@ -70,49 +72,109 @@ public function AdChapitre() {
       $vue = new Vue("Accueil");
       $vue->generer(array('chapitre' => $chapitre));
 }
-/* **************************************************************** */ 
 
-// On affiche la vue de la modifchap de la zone admin 
-public function ModificationChapitre()  {   // Modification et suppression 
-    $chapitre = $this->chapitre->getChapitre(); // On ajoute les info du chapitre 
+/* ********************** Modification Chapitre   *************** */ 
 
+// Function generation de vue admin ModifChapitre
+public function ModificationChapitre()  {   
+    $chapitre = $this->chapitre->getChapitre(); // On ajoute les info du chapitre  
     $vue = new Vue("ModifChapitre");    // Generation de la vue ModifChapitre
     $vue->generer(array('chapitre' => $chapitre));
 } 
 
-
-
-
-//Modification d'un chapitre dans la base 
-public function ModifierChapitree()  { 
-    $select_id =  $_POST['SelectChap']; // recupére l'id du champ ( name = select Chap )
-    $ModifChapContenu = $_POST['ModifierChapContenu '];   // recup champs contenu modif 
+// Affiche le choix du chapitre 
+public function ModifierChapitre($idoneChapitre)  { 
+    $chapitre = $this->chapitre->getChapitre(); // On ajoute les info du chapitre 
+    $oneChapitre  = $this->chapitre->getOneChapitre($idoneChapitre);
+    $vue = new Vue("SelectChap");    // Generation de la vue ModifChapitre
+    $vue->generer(array('chapitre'=>$oneChapitre )); 
 }
 
-
-/* ************* */ 
-
-public function VoirCommentaire()  {  
-    $chapitre = $this->chapitre->getChapitre(); // On ajoute les info du chapitre 
-    // ajouter commentaire
-    $vue = new Vue("VoirCom");    // Generation de la vue VoirCom
+// Modification du chapitre dans la base  
+public function ModifierChapitre3()  {          
+    $id_Chap =  $_POST['idChap'];  // Recupére l'id du chapitre sur le bouton modifier le chapitre définitif 
+    $oneChapitre  = $this->chapitre->getOneChapitre($id_Chap);
+    $this->admin->ModifierChapitreBase($id_Chap); 
+    $chapitre = $this->chapitre->getChapitre(); // On ajoute les info du chapitre    
+    // On redirige vers l'acceuil 
+    $vue = new Vue("Accueil");  
     $vue->generer(array('chapitre' => $chapitre));
+}
+
+/* ********************** Suppression Chapitre   *************** */ 
+// Generation de la vue SuprChapitre ADMIN 
+public function SuprChapitre() {
+    $chapitre = $this->chapitre->getChapitre(); // On ajoute les info du chapitre 
+    // Generation de la vue 
+    $vue = new Vue("SuprChapitre");  
+    $vue->generer(array(
+        'chapitre' => $chapitre,                
+    ));
+}
+    
+// Selection formulaire et envoie a la base 
+public function SuppressionChapitre()  {  
+    $id_SuprChap = $_POST['SelectSuprChap'];
+    $oneChapitre  = $this->chapitre->getOneChapitre($id_SuprChap);
+    $this->admin->SupprimerChapitreBase($id_SuprChap);   
+    $chapitre = $this->chapitre->getChapitre(); // On ajoute les info du chapitre     
+      // On redirige vers l'acceuil 
+      $vue = new Vue("Accueil");  
+      $vue->generer(array('chapitre' => $chapitre));
+}
+
+public function VoirCommentaire()  {   
+    $CommentaireSignaler  = $this->admin->AfficherCommentaireSignaler();
+    $CommentaireNonSignaler  = $this->admin->AfficherCommentaireNonSignaler();
+    
+    // Essai d'avoir le titre du chapitre --------------------------------------
+    
+    
+    $chapitre = $this->chapitre->getChapitre(); 
+    
+  //   $ChapitreID =  $CommentaireSignaler['CHA_ID'] ; 
+  //   $oneChapitre  = $this->chapitre->getOneChapitre($ChapitreID);
+    // $oneChapitre  = $this->chapitre->getOneChapitre($idoneChapitre);
+    
+    
+    // ------------------------------------------------------------------------
+    // Afficher la vue 
+    $vue = new Vue("VoirCom");    // Generation de la vue VoirCom
+    $vue->generer(array( 
+    'ListeCommentaires' => $CommentaireSignaler,
+  //  'chapitre' => $chapitre,
+  //  'chapitre'=> $oneChapitre,
+    'ListeCommentairesNonSignaler' => $CommentaireNonSignaler 
+    ));  
 } 
 
+public function SupprimerCommentaire() { 
+    $com_idsupr =  $_POST['com_id']; // recupérer l'id du commentaire dans le formulaire du bouton supprimer
+     $this->admin->SupprimerCommentaireReq($com_idsupr); // Requete selon com_idsupr 
+    $commentaires = $this->commentaire->getCommentaires($com_idsupr);
 
+    // Gerer aussi l'id du chapitre 
+    $id_chapsupr =  $_POST['idchapsupr'];  // Recupére l'id du chapitre sur le bouton signaler 
+    $oneChapitre  = $this->chapitre->getOneChapitre($id_chapsupr);
+    $commentaires = $this->commentaire->getCommentaires($id_chapsupr);     
+          
+    // On actualise  
+    $CommentaireSignaler  = $this->admin->AfficherCommentaireSignaler();
+    $CommentaireNonSignaler  = $this->admin->AfficherCommentaireNonSignaler();
 
+    // Afficher la vue 
+    $vue = new Vue("VoirCom");    // Generation de la vue VoirCom
+    // Avec les parametres suivant pour la vue : 
+       $vue->generer(array( 
+       'ListeCommentaires'=> $CommentaireSignaler ,
+       'commentaires'=> $commentaires,
+       'ListeCommentairesNonSignaler'=> $CommentaireNonSignaler ));  
 
-/* *************************************** */
-
-/* **************************************** */ 
+}
 
 
 }  // fin de class controleur admin 
 
-
-
-// A faire : 
-// Function de deconnexion Admin  
 
 
 
