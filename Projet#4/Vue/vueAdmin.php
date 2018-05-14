@@ -3,20 +3,21 @@
 
 <!--  Panneau Admin --> 
 <nav id="navAdmin">
-         <div id="Nav1">      <a href="index.php?action=admin"  class="LienNav">Ajouter un chapitre</a></div>
-         <div id="Nav2">      <a href="index.php?action=ModifChapitre"  class="LienNav">Modifier un chapitre</a></div>
-         <div id="Nav3">      <a href="index.php?action=SuprChapitre"  class="LienNav">Supprimer un chapitre</a></div>
-         <div id="Nav4">      <a href="index.php?action=VoirCom"  class="LienNav">Voir les commentaires</a></div>
-         <div id="Nav5">      <a href="index.php?action=Deconnexion"  class="LienNav">Deconnexion</a>   </div>
+              <a href="index.php?action=admin"  class="LienNav">Ajouter un chapitre</a>
+              <a href="index.php?action=ModifChapitre"  class="LienNav">Modifier un chapitre</a>
+              <a href="index.php?action=SuprChapitre"  class="LienNav">Supprimer un chapitre</a>
+              <a href="index.php?action=VoirCom"  class="LienNav">Voir les commentaires</a>
+              <a href="index.php?action=Deconnexion"  class="LienNav">Deconnexion</a>   
       </nav>
 
 
-<div id="ConteneurAdmin">
+
     <br/>
-    <p class="center"> Bienvenue Jean Forteroche </p> 
+    <h2 class="center"> Bienvenue Jean Forteroche </h2> 
     <hr>
      <br/>
-    <p class="center">  Ajouter un chapitre   </p> 
+    <h2 class="center">  Pour ajouter un chapitre veuillez remplire le titre <br/>
+                         et le contenu du chapitre puis cliquer sur "Ajouter un chapitre"  </h2> 
 
     <div id="ZoneAjouterChap">
          <form method="post" action="index.php?action=AjouterChapitre">
@@ -24,11 +25,11 @@
          <br/>       
          <textarea id="contenuChapitre" name="ContenuChap" rows="4" placeholder="Contenu du chapitre"  >  </textarea>
 	     <br/> 
-         <input type="submit" value="Ajouter le chapitre" class="bouton_commenter" />
+         <input type="submit" value="Ajouter un chapitre" class="bouton_commenter" />
         </form>
     </div>
 		
-</div> <!-- Fin de de conteneur admin --> 
+
 <!-- 
 
     Il faut un formulaire pour pouvoir envoyer des info dans la bdd 

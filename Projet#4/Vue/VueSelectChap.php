@@ -1,16 +1,17 @@
 <?php $this->titre = "ModifunChapitre"; ?>
 
 <nav id="navAdmin">
-         <div id="Nav1">      <a href="index.php?action=admin"  class="LienNav">Ajouter un chapitre</a></div>
-         <div id="Nav2">      <a href="index.php?action=ModifChapitre"  class="LienNav">Modifier un chapitre</a></div>
-         <div id="Nav3">      <a href="index.php?action=SuprChapitre"  class="LienNav">Supprimer un chapitre</a></div>
-         <div id="Nav4">      <a href="index.php?action=VoirCom"  class="LienNav">Voir les commentaires</a></div>
-         <div id="Nav5">      <a href="index.php?action=Deconnexion"  class="LienNav">Deconnexion</a>   </div>
+              <a href="index.php?action=admin"  class="LienNav">Ajouter un chapitre</a>
+              <a href="index.php?action=ModifChapitre"  class="LienNav">Modifier un chapitre</a>
+              <a href="index.php?action=SuprChapitre"  class="LienNav">Supprimer un chapitre</a>
+              <a href="index.php?action=VoirCom"  class="LienNav">Voir les commentaires</a>
+              <a href="index.php?action=Deconnexion"  class="LienNav">Deconnexion</a>   
       </nav>
 
-<div id="ConteneurAdmin">
 
-<p> Vous pouvez modifier votre chapitre </p>  
+
+<h2> Vous pouvez modifier votre chapitre </h2>  
+<hr>
 <div id="ZoneAjouterChap">
         <form method="post" action="index.php?action=XXX">
             <!-- Modifier le titre du chapitre -->  
@@ -27,12 +28,9 @@
             
                 <input type="submit" value="Modifier le chapitre" class="bouton_modifier" />
     </form>
-<hr>
+
 </div>
 
-  <p> Veuillez selectioner un chapitre puis cliquer sur
-  "supprimer" pour le suprimer </p> 
- <hr> 
+ 
 
 
-</div> <!-- Fin de de conteneur admin --> 

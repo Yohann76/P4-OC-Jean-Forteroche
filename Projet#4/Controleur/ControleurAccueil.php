@@ -13,14 +13,31 @@ class ControleurAccueil {
        $this->chapitre = new chapitre(); // Bonne conscruct de base 
     }
 
-    // Function qui affiche la page d'accueil 
+    // Affiche la page d'accueil 
     public function accueil() {
        $chapitre = $this->chapitre->getChapitre();
-
        $vue = new Vue("Accueil");
        $vue->generer(array('chapitre' => $chapitre));
-   //     $vue = new Vue("Accueil");  // BON
-   //     $vue->generer(array());  // BON 
+
+    }
+
+
+    // Affiche la page Synopsis 
+    public function  Synopsis() {
+        $vue = new Vue("Synopsis");
+        $vue->generer(array());
+    }
+
+    // Affiche la page Mes livres
+    public function  Livres() {
+        $vue = new Vue("Livres");
+        $vue->generer(array());
+    }
+
+    // Affiche la page Contact
+    public function  Contact() {
+        $vue = new Vue("Contact");
+        $vue->generer(array());
     }
 
     

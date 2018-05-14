@@ -105,7 +105,15 @@ class Routeur {
             
 
 
-
+                if ($_GET['action'] == 'Synopsis') {  // Affiche la vue Synopsis 
+                    $this->ctrlAccueil->Synopsis();        
+                }     
+                if ($_GET['action'] == 'Livres') {  // Affiche la vue Synopsis 
+                    $this->ctrlAccueil->Livres();        
+                }       
+                if ($_GET['action'] == 'Contact') {  // Affiche la vue Synopsis 
+                    $this->ctrlAccueil->Contact();        
+                }     
 
 
 

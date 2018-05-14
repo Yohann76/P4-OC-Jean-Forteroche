@@ -1,21 +1,21 @@
 <?php $this->titre = "Voircom"; ?>
 
 <nav id="navAdmin">
-         <div id="Nav1">      <a href="index.php?action=admin"  class="LienNav">Ajouter un chapitre</a></div>
-         <div id="Nav2">      <a href="index.php?action=ModifChapitre"  class="LienNav">Modifier un chapitre</a></div>
-         <div id="Nav3">      <a href="index.php?action=SuprChapitre"  class="LienNav">Supprimer un chapitre</a></div>
-         <div id="Nav4">      <a href="index.php?action=VoirCom"  class="LienNav">Voir les commentaires</a></div>
-         <div id="Nav5">      <a href="index.php?action=Deconnexion"  class="LienNav">Deconnexion</a>   </div>
+              <a href="index.php?action=admin"  class="LienNav">Ajouter un chapitre</a>
+              <a href="index.php?action=ModifChapitre"  class="LienNav">Modifier un chapitre</a>
+              <a href="index.php?action=SuprChapitre"  class="LienNav">Supprimer un chapitre</a>
+              <a href="index.php?action=VoirCom"  class="LienNav">Voir les commentaires</a>
+              <a href="index.php?action=Deconnexion"  class="LienNav">Deconnexion</a>   
       </nav>
 
-<div id="ConteneurAdmin">
+
 
 <!-- Liste des chapitres A retirer  --> 
 
  <div id="ContenerFlex"> 
 
       <div id="ContenerDivSignaler1"> 
-      <p> Voici les commentaires signalé par les utilisateurs : </p> 
+      <h2> Voici les commentaires signalé par les utilisateurs : </h2> 
           
           
           <!-- boucle la liste des commentaires -->          
@@ -41,7 +41,7 @@
 
     <!-- Commentaire non signaler --> 
      <div id="ContenerDivSignaler2"> 
-     <p> et Voici le reste des commentaires Non Signaler</p>
+     <h2> et Voici le reste des commentaires Non Signaler</h2>
           <?php foreach ($ListeCommentairesNonSignaler as $CommentaireNonSignaler): ?>
               <div id="ComSignaler"> 
                   <?= $CommentaireNonSignaler['COM_AUTEUR'] ?> a dit : <?= $CommentaireNonSignaler['COM_CONTENU'] ?> <br/> 
@@ -69,5 +69,5 @@
 <p> display chapitre </p> 
 <?= var_dump( $chapitre)  ; ?> 
 
-</div> <!-- Fin de de conteneur admin --> 
+
 

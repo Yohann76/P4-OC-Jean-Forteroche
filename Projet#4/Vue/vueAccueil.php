@@ -20,7 +20,7 @@
 
         <div id="ContenuChap"> 
             <p>
-            <?= $oneChapitre['contenu'] ?> <!-- Contenu du bilet -->   <!-- SubSTR  de la variable one chaitre --> 
+            <?=  substr(  $oneChapitre['contenu']  , 0, 150   )  ?> <!-- Contenu du bilet avec les 150 premier caractére afficher  --> 
             </p>
         </div>
 

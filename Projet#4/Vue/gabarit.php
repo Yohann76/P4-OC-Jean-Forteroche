@@ -12,7 +12,7 @@
         <script>tinymce.init({ selector:'textarea' });</script>  
         <!-- Script --> 
         <script src="Contenu/js/jquery-3.2.1.js"> </script>       <!-- Bibliotheque JavaScript Jquery   --> 
-	    <script src="Contenu/js/Php.Ajax.js">         </script>       <!-- Script Ajax/php --> 
+	    <script src="Contenu/js/script.js">         </script>       <!-- Script  --> 
 
         <!-- Cascading Style Sheets -->
         <link rel="stylesheet" href="Contenu/css/style.css" /> 
@@ -38,10 +38,10 @@
         	<ul class="menu">
             	<li><img src="Contenu/images/logo-transparent.png"></li>
             	<li class="selected"><a href="index.php">Accueil</a></li>
-            	<li ><a href="">Mon histoire</a></li>
-            	<li ><a href="/livres">Mes livres</a></li>
-            	<li ><a href="/contact">Contact</a></li>   
-                <li><a href="index.php?action=chapitre">Chapitre</a></li>           
+            	<li ><a href=index.php?action=Synopsis>Synopsis</a></li>
+            	<li ><a href=index.php?action=Livres>Mes livres</a></li>
+            	<li ><a href=index.php?action=Contact>Contact</a></li>   
+                      
             </ul>
         </nav>
         
@@ -55,17 +55,19 @@
             <div class="container">
                 <div class="row link-zone">       
                       <div>
-                            <h3>Partie 1 </h3>
-                            <p> Bla <br>
-                                Bla <br>
-                                Bla <br>      
-                            </p>
+                            <h3>Mes livres </h3>
+                                <p> 
+                                    <i class="fa fa-caret-right"></i> <a href="#">Voyage en Australie</a><br>
+                                    <i class="fa fa-caret-right"></i> <a href="#">A la decourverte de la Chine</a><br>
+                                    <i class="fa fa-caret-right"></i> <a href="#">Un petit tour au Brésil </a><br>
+                                
+                           </p>
                         </div>
                         <div>
-                            <h3>Partie 2 </h3>
-                            <p><i class="fa fa-caret-right"></i> <a href="/livres">Bla Bla </a><br>    
-                               <i class="fa fa-caret-right"></i> <a href="/livres">Bla Bla</a><br>
-                               <i class="fa fa-caret-right"></i> <a href="index.php?action=admin">Admin</a>
+                            <h3>Partage</h3>
+                            <p><i class="fa fa-caret-right"></i> <a href=index.php?action=Contact>Me contacter</a><br>    
+                               <i class="fa fa-caret-right"></i> <a href="#">Espace Membre</a><br>
+                               <i class="fa fa-caret-right"></i> <a href="index.php?action=admin">Zone admin</a> </p> 
                         </div>
                         <div>
                             <h3>Écrivez-moi</h3>

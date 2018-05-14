@@ -1,4 +1,4 @@
 <?php $this->titre = "Mon Blog - Erreur !"; ?>
 
-<p> nous avons une erreur : </p> 
+<h2> nous avons une erreur : </h2> 
 <p><?= $msgErreur ?></p>

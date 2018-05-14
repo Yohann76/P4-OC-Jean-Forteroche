@@ -116,7 +116,8 @@ public function SuprChapitre() {
 public function SuppressionChapitre()  {  
     $id_SuprChap = $_POST['SelectSuprChap'];
     $oneChapitre  = $this->chapitre->getOneChapitre($id_SuprChap);
-    $this->admin->SupprimerChapitreBase($id_SuprChap);   
+    $this->admin->SupprimerChapitreBase($id_SuprChap);  
+    
     $chapitre = $this->chapitre->getChapitre(); // On ajoute les info du chapitre     
       // On redirige vers l'acceuil 
       $vue = new Vue("Accueil");  
