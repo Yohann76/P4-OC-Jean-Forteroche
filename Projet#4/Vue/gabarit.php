@@ -5,14 +5,14 @@
 <head>
         <META charset="utf-8" />
         <title><?= $titre ?></title>
-        <link rel="icon" href="Contenu/images/favicon1.png" />  
+        <link rel="icon" href="Contenu/images/favicon.ico" />  
 		
         <!-- Javascript ( TinyMCE Cloud-->  
         <script src="https://cloud.tinymce.com/stable/tinymce.min.js? apiKey =lnfchylxlemst3ynxsyi9gn4s46t24w9izko03swk9ioqdhw"></script>
         <script>tinymce.init({ selector:'textarea' });</script>  
         <!-- Script --> 
         <script src="Contenu/js/jquery-3.2.1.js"> </script>       <!-- Bibliotheque JavaScript Jquery   --> 
-	    <script src="Contenu/js/script.js">         </script>       <!-- Script  --> 
+
 
         <!-- Cascading Style Sheets -->
         <link rel="stylesheet" href="Contenu/css/style.css" /> 
@@ -22,21 +22,18 @@
 		<META NAME="keywords" CONTENT="" />
 		<META name="description" content="  " />
 										
-                    
+        <!-- Viewport pour enlever le dezoom sur mobile -->   
+        <META name="viewport" content="width=device-width,initial-scale=1.0,shrink-to_fit=no">          
         <!-- FONT AWESOME -->
 		<link rel="stylesheet" href="Contenu/font-awesome/css/font-awesome.min.css" />
  </head>
-
-
-
-
 
 <body class="bg-gray">
 	<!-- HEADER --> 
 	<header class="visiteur">	
     	<nav class="container">
         	<ul class="menu">
-            	<li><img src="Contenu/images/logo-transparent.png"></li>
+            	<li><img class="logo" src="Contenu/images/logo-transparent.png"></li>
             	<li class="selected"><a href="index.php">Accueil</a></li>
             	<li ><a href=index.php?action=Synopsis>Synopsis</a></li>
             	<li ><a href=index.php?action=Livres>Mes livres</a></li>
@@ -57,9 +54,9 @@
                       <div>
                             <h3>Mes livres </h3>
                                 <p> 
-                                    <i class="fa fa-caret-right"></i> <a href="#">Voyage en Australie</a><br>
-                                    <i class="fa fa-caret-right"></i> <a href="#">A la decourverte de la Chine</a><br>
-                                    <i class="fa fa-caret-right"></i> <a href="#">Un petit tour au Brésil </a><br>
+                                    <i class="fa fa-caret-right"></i> <a href="index.php?action=Livres#">Voyage en Australie</a><br>
+                                    <i class="fa fa-caret-right"></i> <a href="index.php?action=Livres#">A la decourverte de la Chine</a><br>
+                                    <i class="fa fa-caret-right"></i> <a href="index.php?action=Livres#">Un petit tour au Brésil </a><br>
                                 
                            </p>
                         </div>

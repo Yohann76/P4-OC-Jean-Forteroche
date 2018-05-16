@@ -84,9 +84,10 @@ class Routeur {
                     $this->ctrlAdmin->SuprChapitre();        
                 }
 
-                // Suppression du chapitre a la base 
+                // Suppression du chapitre a la base   // Suppr aussi les commentaires au clic 
                 if ($_GET['action'] == 'chapitresupr') {     
-                    $this->ctrlAdmin->SuppressionChapitre();
+                    $this->ctrlAdmin->SuppressionChapitre(); // Suprimme le chapitre avec les commentaires avant 
+               
            
                 }
 

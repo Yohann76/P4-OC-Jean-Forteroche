@@ -1,4 +1,4 @@
-<?php $this->titre = "Supprimerchapitre"; ?>
+<?php $this->titre = "Zone Admin"; ?>
 <nav id="navAdmin">
               <a href="index.php?action=admin"  class="LienNav">Ajouter un chapitre</a>
               <a href="index.php?action=ModifChapitre"  class="LienNav">Modifier un chapitre</a>
@@ -7,7 +7,8 @@
               <a href="index.php?action=Deconnexion"  class="LienNav">Deconnexion</a>   
       </nav>
     
-
+<h2 class="TitrePage"> Supprimer un chapitre </h2> 
+<hr>
 
 
 <div id="ZoneAjouterChap"> 
@@ -20,17 +21,25 @@
     <select name="SelectSuprChap" id="selectionchapitre">
 
     <?php foreach ($chapitre as $oneChapitre): ?>
-
         <option value="   <?=$oneChapitre['id'] ?>   "     selected>     <?=  $oneChapitre['titre'] ?>  </option> 
-        <!-- Mettre un lien value id --> 
-
     <?php endforeach; ?>
+    
+        <br/>
+       <input type="submit" value="Supprimer le chapitre" Onsubmit="return attention();"  id="bouton_supprimer"     />
         
-       <input type="submit" value="Supprimer le chapitre" class="bouton_supprimer"    Onsubmit="return attention();" />
+        
    </select>
      </form>
- </div>
 
+     <hr>
+     <h2> Pour supprimer un chapitre veuillez selectionner le chapitre dans la liste deroulante <br/>
+     puis cliquer sur "Supprimer le chapitre" <br/>
+     Ensuite un message d'alerte va s'afficher, si vous voulez continuer <br/>
+     Selectionner : "OK" <br/>
+     Sinon Selectionner : "Annuler" <br/> 
+    </h2>
+
+ </div>
 
 
 

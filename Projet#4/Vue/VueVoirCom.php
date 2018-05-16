@@ -1,4 +1,4 @@
-<?php $this->titre = "Voircom"; ?>
+<?php $this->titre = "Zone Admin"; ?>
 
 <nav id="navAdmin">
               <a href="index.php?action=admin"  class="LienNav">Ajouter un chapitre</a>
@@ -11,23 +11,16 @@
 
 
 <!-- Liste des chapitres A retirer  --> 
+<h2 class="TitrePage" > Commentaires </h2> 
+<hr>
 
- <div id="ContenerFlex"> 
+ 
 
       <div id="ContenerDivSignaler1"> 
       <h2> Voici les commentaires signalé par les utilisateurs : </h2> 
-          
-          
-          <!-- boucle la liste des commentaires -->          
-          <!-- Boucle n°1 --> 
           <?php foreach ($ListeCommentaires as $CommentaireSignaler): ?>
               <div id="ComSignaler"> 
                   <?= $CommentaireSignaler['COM_AUTEUR'] ?> a dit : <br/><hr> <?= $CommentaireSignaler['COM_CONTENU'] ?> <br/> 
-                  <!-- Test recupération de titre chapitre --> 
-
-                  <?= $CommentaireSignaler['CHA_ID'] ?>      
-                          
-
                   <!-- Selectioner ce commentaire pour le Suprimer -->
                   <form method="post" action="index.php?action=SupprimerCommentaire">
                       <input type="hidden" name="com_id" value=" <?= $CommentaireSignaler['COM_ID'] ?> " />  
@@ -41,10 +34,10 @@
 
     <!-- Commentaire non signaler --> 
      <div id="ContenerDivSignaler2"> 
-     <h2> et Voici le reste des commentaires Non Signaler</h2>
+     <h2> Voici les commentaires non signaler</h2>
           <?php foreach ($ListeCommentairesNonSignaler as $CommentaireNonSignaler): ?>
               <div id="ComSignaler"> 
-                  <?= $CommentaireNonSignaler['COM_AUTEUR'] ?> a dit : <?= $CommentaireNonSignaler['COM_CONTENU'] ?> <br/> 
+                  <?= $CommentaireNonSignaler['COM_AUTEUR'] ?> a dit :<br/><hr>  <?= $CommentaireNonSignaler['COM_CONTENU'] ?> <br/> 
                     <!-- Selectioner ce commentaire pour le Suprimer -->
                       <form method="post" action="index.php?action=SupprimerCommentaire">
                       <input type="hidden" name="com_id" value=" <?= $CommentaireNonSignaler['COM_ID'] ?> " />  
@@ -55,19 +48,9 @@
           <?php endforeach; ?>
      </div>
        
-</div> 
-
-      
-<p> display chapitre titre </p> 
-<?= var_dump( $chapitre['titre'])  ; ?> 
 
 
-<p> display chapitres titre </p> 
-<?= var_dump( $chapitres['titre'])  ; ?> 
-
-
-<p> display chapitre </p> 
-<?= var_dump( $chapitre)  ; ?> 
+ 
 
 
 

@@ -1,5 +1,7 @@
 <?php $this->titre = "Contact"; ?>
 
+<h2 class="TitrePage" > Contact </h2> 
+<hr>
 
 <h2> Laissez-moi un message ! </h2> 
 

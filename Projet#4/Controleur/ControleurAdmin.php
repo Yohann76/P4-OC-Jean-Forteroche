@@ -111,9 +111,13 @@ public function SuprChapitre() {
         'chapitre' => $chapitre,                
     ));
 }
-    
-// Selection formulaire et envoie a la base 
+
+// Selection formulaire et envoie a la base  
 public function SuppressionChapitre()  {  
+    // Supprime les commentaires du chapitre avant */ 
+    $comchap_idsupr =  $_POST['SelectSuprChap'];   
+    $this->admin->SupprimerCommentaireDeChap($comchap_idsupr); 
+    // Supprime le chapitre de la base 
     $id_SuprChap = $_POST['SelectSuprChap'];
     $oneChapitre  = $this->chapitre->getOneChapitre($id_SuprChap);
     $this->admin->SupprimerChapitreBase($id_SuprChap);  
@@ -123,6 +127,7 @@ public function SuppressionChapitre()  {
       $vue = new Vue("Accueil");  
       $vue->generer(array('chapitre' => $chapitre));
 }
+
 
 public function VoirCommentaire()  {   
     $CommentaireSignaler  = $this->admin->AfficherCommentaireSignaler();

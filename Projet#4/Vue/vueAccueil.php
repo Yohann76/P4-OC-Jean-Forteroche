@@ -15,7 +15,6 @@
                 <?= $oneChapitre['date'] ?> <!-- date du bilet --> 
                 </time>
             </div>  
-
         </header>
 
         <div id="ContenuChap"> 

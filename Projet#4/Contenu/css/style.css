@@ -6,103 +6,83 @@
 
 Github : https://github.com/Yohann76
 */
-
 body {
-    	background :white ; 
-        margin: 0 ; /* Effacer les marges du body */  
-    }
-    /*   wysiwyg  */ 
-
- a {  /* lien de la page */ 
+    background :white ; 
+    margin: 0 ; 
+}  
+a {  /* lien de la page */ 
     text-decoration:none;
     color : black
- }
-
+}
 h2 {
     text-align: center ; 
     font-family:Baskerville, Lato, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
 }
 
-    .bg-gray{
-        /* background:red; */   
-    }
+
+.bg-gray{        
+}
     
-    header.visiteur {
-        height:200px;
-        background-size:cover;
-    
-        background: url("../images/header.jpg") ; /* ./ = dossier précédent */ 
-        text-align:center;	
-        margin:0 0 30px 0;
-        background-color: rgb(50,50,50) ; 
-    }
-    
-    
-    
-    H1.titre-page {
-        
-        font-family:Baskerville, Lato, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
-        margin: 0;
-        line-height:150px;
-        color: red;  /* jaune : #ffc013 */  /* cadetblue */
-        font-weight:300;
-    }
-    
-    h2.titre-complement{
-        font-family:Baskerville, Lato, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
-        margin: -50px 0 0 0;
-        /* line-height:200px; */
-        font-size:1.2em;
-        color: #ffc013 ; /* jaune : #ffc013 */ 
-        font-weight:300;
-    
-    
-    }
-    /* NAV */ 
-    nav {
-        margin:0 auto;
-        height:40px;    
-    }
-    nav .menu{ 
-        
-        margin:0;
-        display:flex;
-        flex-flow: row wrap;
-        align-content:space-around;
-        padding-left:30px;
-    }
-    nav .menu li {
-         display: block;
-         
-    }
+header.visiteur {
+    height:200px;
+    background-size:cover;
+    background: url("../images/header.jpg") ; /* ./ = dossier précédent */ 
+    text-align:center;	
+    margin:0 0 30px 0;
+    background-color: rgb(50,50,50) ; 
+}
+     
+H1.titre-page {
+    font-family:Baskerville, Lato, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+    margin: 0;
+    line-height:150px;
+    color: red;  
+    font-weight:300;
+}   
+h2.titre-complement{
+    font-family:Baskerville, Lato, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+    margin: -50px 0 0 0;
+    font-size:1.2em;
+    color: #ffc013 ; /* jaune : #ffc013 */ 
+    font-weight:300;
+}
+/* NAV */ 
+nav {
+    margin:0 auto;
+    height:40px;    
+}
+nav .menu{ 
+    margin:0;
+    display:flex;
+    flex-flow: row wrap;
+    align-content:space-around;
+    padding-left:30px;
+}
+nav .menu li {
+    display: block;   
+}
 nav .menu li img {
-  padding-right:100px;       
+    padding-right:100px;       
 }    
 nav .menu li a {
-  display:block;	
-  font-family: "roboto slab";
-  line-height:40px;
-  padding:0 25px;
-  color : #666;
-  text-decoration:none;
-  border-left:1px solid #666;
-  border-bottom:1px solid #666; 
-}
-    
+    display:block;	
+    font-family: "roboto slab";
+    line-height:40px;
+    padding:0 25px;
+    color : #666;
+    text-decoration:none;
+    border-left:1px solid #666;
+    border-bottom:1px solid #666; 
+}  
 nav .menu>li:last-child a{
-    border-right:1px solid #666; 
-        
-}
-    
+    border-right:1px solid #666;         
+}  
 nav .menu>li:first-child{
     padding-top:0px;
-}
-    
-    
+}  
 .menu>li.selected a, .menu>li>a:hover {
-   background: #ffc013;
-}
-    
+    background: #ffc013;
+}    
 .container {
     max-width: 1150px;
     margin:0 auto;
@@ -110,23 +90,27 @@ nav .menu>li:first-child{
 
 .center {
     text-align: center ; 
-    
     margin : auto ; 
+    margin-bottom: 25px ; 
+}
+
+.centerSyno {
+    text-align: center ; 
+    margin : auto ; 
+    font-size: 25px ; 
+    font-family:Baskerville, Lato, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;  
+    
 }
     /* Menu admin */ 
  /* ********************* */ 
 
  #navAdmin {
-   
-   
     text-align: center ; 
     vertical-align: center ; 
     z-index: 0 ; 
-    background-color: #343c49; 
-
+    background-color: #343c49;   
+    margin-top: -30px ; 
 }
-
-
 .LienNav { 
     Color : white  ;
     font-family:Baskerville, Lato, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;  
@@ -261,8 +245,12 @@ nav .menu>li:first-child{
  
 
     hr {
-        color : yellow  ; 
-        width: 30% ; 
+        width: 400px ; 
+        height: 0px ; 
+        border : 2px black solid ; 
+        
+        margin-top: 25px ; 
+        margin-bottom: 15px ; 
     }
 
     /* VueChapitre */
@@ -285,7 +273,11 @@ nav .menu>li:first-child{
        
     }
 
-
+#imagePortrait {
+    margin: auto ; 
+    height: 700px ;
+    width: 465px ; 
+}
 
     /* Bouton commenter et peut etre admin acces */
  /*   input {
@@ -294,22 +286,7 @@ nav .menu>li:first-child{
         margin-bottom: 2px ; 
         
      } */
-     /* Bouton signaler */ 
-     .bouton_signaler {
-       text-align: center ; 
-       padding: 5px ; 
-   /*    background-color: #ffc01349 ; */
-     }
 
-    .bouton_commenter{
-      /*  background-color: #ffc01377 ; */
-    margin-bottom: 10px ; 
-    margin-top: 10px ; 
-    color : black; 
-    background-color: #ffc013  ; 
-    
-    width: 200px ; 
-    }
 
     #Commentaire { /* zone de commentaire */
         padding: 1px ; 
@@ -432,33 +409,98 @@ margin-bottom: 10px ;
     text-align:  center ; 
     margin : auto ; 
     margin-top: 10px ;
+    padding-top: 10px ; 
     background-color: #ffc013  ; 
 
 }
 
-#ContenerFlex {
-    display: flex ; 
-}
+
 #ContenerDivSignaler1 {
     margin : auto ; 
     border : 2px black solid ; 
     padding-bottom: 10px ; 
-    margin-bottom: 10px ; 
+    margin-bottom: 10px ;
+    margin-top: 15px ; 
     width: 40% ; 
-
-    
 }
 #ContenerDivSignaler2 {  /* Commentaire non signaler */ 
     margin : auto ; 
     border : 2px black solid ; 
     padding-bottom: 10px ; 
-    width:40% ; 
-  
-  
+    margin-bottom: 10px ;
+    margin-top: 15px ; 
+    width: 40% ; 
+}
+/* Vue Livre */ 
+
+#ContenerLivre {
+    width: 100% ; 
+    padding-top: 25px ; 
+    padding-bottom: 25px ; 
+}
+
+#Livre1 , #Livre2 , #Livre3 {
+    border : 0px black solid ; 
+    text-align: center ; 
+    width: 80% ; 
+    margin: auto ; 
+    margin-top: 20px ; 
+    
+    display: flex;
+    
     
 }
 
+#column1 {
+    height: 400px ; 
+    width: 50% ; 
+     
+    background-color: #ffc013 ; 
+    
+    
+    
+}
+#column2 {
+    height: 400px ; 
+    width: 50% ; 
+    
+    background-color: #ffc013a9   ;
+   
+    
+}
 
+.liensuite {
+    text-decoration: underline ; 
+    color : green; 
+}
+
+.TitrePage {
+    text-align: center ; 
+    margin : auto ; 
+    font-size: 45px ; 
+    font-weight: bold ; 
+    font-family:Baskerville, Lato, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif; 
+    margin-bottom: 25px ; 
+    margin-top: 25px ; 
+    color :  #ffc013  ; 
+}
+#imageAlaska {
+    width: 100%; 
+    height: auto ;  
+    overflow: hidden ;  /* pour que l'image soit invisible quand ca depasse */ 
+
+ 
+}
+     
+#imagePortrait {
+    width: 100% ; 
+    height: auto ; 
+    margin :auto ; 
+    overflow: hidden ;  /* pour que l'image soit invisible quand ca depasse */ 
+    
+ 
+  
+}
 /* page Contact */ 
 
 .bouton_contact {
@@ -466,20 +508,37 @@ margin-bottom: 10px ;
     margin-top: 10px ; 
     color : black; 
     background-color: #ffc013  ; 
-    
     width: 200px ; 
 }
 
-
-bouton_supprimer {
+#bouton_supprimer {
     margin-bottom: 10px ; 
     margin-top: 10px ; 
     color : black; 
     background-color: #ffc013  ; 
-    
-    width: 200px ; 
-    
-    
+    width: 200px ;  
+    margin-left: 5% ; 
+}
+   
+.bouton_signaler {
+    text-align: center ; 
+    padding: 5px ; 
+    margin-bottom: 10px ; 
+    margin-top: 10px ; 
 }
 
+.bouton_commenter{
+    margin-bottom: 10px ; 
+    margin-top: 10px ; 
+    color : black; 
+    background-color: #ffc013  ; 
+    width: 200px ; 
+}
 
+#selectionchapitre {  /* pour supprimer un chapitre form */ 
+    width: 500px ; 
+    color : black  ;
+    font-weight: bold ; 
+    background-color:  #ffc01377  ;  
+    
+}

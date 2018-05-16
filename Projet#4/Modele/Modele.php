@@ -7,7 +7,8 @@ abstract class Modele {
 
     
     private $bdd;
-
+    // Requete PDO 
+    // Requete paramétrer donc protéger des injection SQL
     protected function executerRequete($sql, $params = null) {
         if ($params == null) {
             $resultat = $this->getBdd()->query($sql); // exécution directe
@@ -23,7 +24,7 @@ abstract class Modele {
         if ($this->bdd == null) {
             // Création de la connexion
 
-    // T_Chapitre
+    // name : chapitre , id = root, et sans mdp 
     $this->bdd = new PDO('mysql:host=localhost;dbname=chapitre;charset=utf8',
    'root', '',
     array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -32,6 +33,16 @@ abstract class Modele {
     }
 
 }
+
+
+/* Connexion En ligne  
+openclasiqyohann.mysql.db
+openclasiqyohann
+MDP : XXX
+*/
+
+
+
 
 
 

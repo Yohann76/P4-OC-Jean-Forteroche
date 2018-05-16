@@ -13,7 +13,7 @@
 
 
     <br/>
-    <h2 class="center"> Bienvenue Jean Forteroche </h2> 
+    <h2 class="TitrePage"> Bienvenue Jean Forteroche </h2> 
     <hr>
      <br/>
     <h2 class="center">  Pour ajouter un chapitre veuillez remplire le titre <br/>

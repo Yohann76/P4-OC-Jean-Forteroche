@@ -1,4 +1,4 @@
-<?php $this->titre = "Chapitre" . $chapitre['titre'];; ?>
+<?php $this->titre = "Chapitre " . $chapitre['titre'];; ?>
 
 <!-- Ici on affiche le chapitre en question --> 
 <article>

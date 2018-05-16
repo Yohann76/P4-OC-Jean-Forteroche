@@ -40,14 +40,22 @@ public function ModifierChapitreBase($id_Chap) {
     $this->executerRequete($sql, array($id_Chap));
 }
 
+
  // Suppression d'un chapitre dans la base  
 public function  SupprimerChapitreBase($id_SuprChap) { 
     // Supprime la ligne du chapitre selon cha_id 
     $sql = '  DELETE FROM T_CHAPITRE WHERE CHA_ID=? ' ;     
     $this->executerRequete($sql, array($id_SuprChap));
 }
+// Supprimer un commentaires en méme temps qu'un chapitre   Selon CHA ID de la table t_commentaire 
+public function SupprimerCommentaireDeChap($comchap_idsupr) {
+  $sql = '  DELETE FROM  T_COMMENTAIRE      WHERE CHA_ID=?  ' ;  
+   $this->executerRequete($sql, array($comchap_idsupr));
+}
 
-// Supprimer un commentaires 
+
+
+// Supprimer un commentaires ADMIN
 public function SupprimerCommentaireReq($id_comsupr) {
      $sql = '  DELETE FROM  T_COMMENTAIRE      WHERE COM_ID=?  ' ;  
       $this->executerRequete($sql, array($id_comsupr));

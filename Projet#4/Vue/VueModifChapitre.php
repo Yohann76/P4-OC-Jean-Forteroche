@@ -1,4 +1,4 @@
-<?php $this->titre = "ModifChapitre"; ?>
+<?php $this->titre = "Zone Admin"; ?>
 
 <nav id="navAdmin">
               <a href="index.php?action=admin"  class="LienNav">Ajouter un chapitre</a>
@@ -7,6 +7,8 @@
               <a href="index.php?action=VoirCom"  class="LienNav">Voir les commentaires</a>
               <a href="index.php?action=Deconnexion"  class="LienNav">Deconnexion</a>   
       </nav>
+      <h2 class="TitrePage" > Modifier un chapitre </h2> 
+      <hr> 
     <h2> Veuillez selectionner un chapitre pour le modifier </h2>
    <?php foreach ($chapitre as $oneChapitre): ?> 
     <article>

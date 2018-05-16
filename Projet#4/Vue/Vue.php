@@ -43,7 +43,7 @@ class Vue {
     }
 
 
-      // Nettoie une valeur insérée dans une page HTML
+      // Nettoie une valeur insérée dans une page HTML //  Faille XSS 
   private function nettoyer($valeur) {
     return htmlspecialchars($valeur, ENT_QUOTES, 'UTF-8', false);
   }

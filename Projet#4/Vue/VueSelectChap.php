@@ -1,4 +1,4 @@
-<?php $this->titre = "ModifunChapitre"; ?>
+<?php $this->titre = "Zone Admin"; ?>
 
 <nav id="navAdmin">
               <a href="index.php?action=admin"  class="LienNav">Ajouter un chapitre</a>
